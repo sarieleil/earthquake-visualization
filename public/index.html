@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Data Visualization</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- D3.js library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Earthquake Data Visualization</h1>
+            <p class="subtitle">Interactive visualization of seismic activity data</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="vizType">Visualization Type:</label>
+                <select id="vizType">
+                    <option value="pie">Pie Chart - Magnitude Distribution</option>
+                    <option value="bar">Bar Chart - Magnitude Distribution</option>
+                    <option value="scatter">Scatter Plot - Magnitude vs Depth</option>
+                    <option value="depthBar">Bar Chart - Depth Distribution</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="limitControl">
+                <label for="dataLimit">Data Limit:</label>
+                <input type="number" id="dataLimit" value="100" min="10" max="500" step="10">
+            </div>
+
+            <button id="generateBtn" class="btn-primary">Generate Visualization</button>
+            <button id="refreshBtn" class="btn-secondary">Refresh Data</button>
+        </div>
+
+        <div class="visualization-container">
+            <div id="chart"></div>
+            <div id="tooltip" class="tooltip"></div>
+        </div>
+
+        <div class="stats-panel">
+            <h3>Statistics</h3>
+            <div id="stats"></div>
+        </div>
+
+        <footer>
+            <p>CSE 6332 Cloud Computing - Data Visualization Assignment</p>
+        </footer>
+    </div>
+
+    <script src="/js/visualizations.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
